@@ -1,0 +1,94 @@
+---
+title: "Untitled"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### PROFIT
+
+```{r}
+library(flexdashboard)
+library(billboarder)
+library(dplyr)
+
+
+setwd("C:\\College\\TSF\\Retail Data")
+
+SampleSuperstor<- read.csv("SampleSuperstore.csv")
+
+billboarder() %>% bb_histogram(SampleSuperstor$Profit,fill =  "red")
+
+
+```
+
+### CATEGORY
+
+```{r}
+library(flexdashboard)
+library(billboarder)
+library(dplyr)
+
+
+setwd("C:\\College\\TSF\\Retail Data")
+
+SampleSuperstor<- read.csv("SampleSuperstore.csv")
+
+cat <- table(SampleSuperstor$Category)
+
+billboarder() %>% bb_piechart(cat)
+
+```
+
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### REGION
+
+```{r}
+library(flexdashboard)
+library(billboarder)
+library(dplyr)
+
+
+setwd("C:\\College\\TSF\\Retail Data")
+
+SampleSuperstor<- read.csv("SampleSuperstore.csv")
+
+cat <- table(SampleSuperstor$State)
+
+billboarder() %>% bb_piechart(cat)
+
+
+
+
+```
+
+### SUB-CATEGORY
+
+```{r}
+library(flexdashboard)
+library(billboarder)
+library(dplyr)
+
+
+setwd("C:\\College\\TSF\\Retail Data")
+
+SampleSuperstor<- read.csv("SampleSuperstore.csv")
+
+cat <- table(SampleSuperstor$Sub.Category)
+
+billboarder() %>% bb_piechart(cat)
+
+
+```
+
